@@ -3,6 +3,8 @@
 //
 //  Created by Bobby on 2024/11/13.
 //
+#ifndef Converter_h
+#define Converter_h
 
 #import <Foundation/Foundation.h>
 
@@ -12,3 +14,5 @@
 - (NSString *)convertPythonToObjC:(NSString *)pythonCode;
 
 @end
+
+#endif /* Converter_h */

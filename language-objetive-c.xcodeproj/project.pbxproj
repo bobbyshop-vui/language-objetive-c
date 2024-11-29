@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C5958DAA2CF8939A001C8DB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5958DA92CF89399001C8DB4 /* main.m */; };
-		C5958DB42CF893B3001C8DB4 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = C5958DAE2CF893B3001C8DB4 /* Converter.m */; };
+		C58A06232CFA0A4A00E5B04C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C58A06222CFA0A4A00E5B04C /* main.m */; };
+		C58A06302CFA0ABF00E5B04C /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = C58A062E2CFA0ABF00E5B04C /* Converter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C5958DA52CF89399001C8DB4 /* CopyFiles */ = {
+		C58A061D2CFA0A4A00E5B04C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,16 +24,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C5958DA72CF89399001C8DB4 /* language-objetive-c */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "language-objetive-c"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5958DA92CF89399001C8DB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C5958DAE2CF893B3001C8DB4 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
-		C5958DB02CF893B3001C8DB4 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
-		C5958DB32CF893B3001C8DB4 /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
-		C5958DB92CF89B05001C8DB4 /* library.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = library.txt; sourceTree = "<group>"; };
+		C58A061F2CFA0A4A00E5B04C /* language-objetive-c */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "language-objetive-c"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C58A06222CFA0A4A00E5B04C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C58A06292CFA0ABF00E5B04C /* library.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = library.txt; sourceTree = "<group>"; };
+		C58A062B2CFA0ABF00E5B04C /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
+		C58A062D2CFA0ABF00E5B04C /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
+		C58A062E2CFA0ABF00E5B04C /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C5958DA42CF89399001C8DB4 /* Frameworks */ = {
+		C58A061C2CFA0A4A00E5B04C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,44 +43,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C5958DA82CF89399001C8DB4 /* language-objetive-c */ = {
+		C58A06162CFA0A4A00E5B04C = {
 			isa = PBXGroup;
 			children = (
-				C5958DB02CF893B3001C8DB4 /* Converter.h */,
-				C5958DAE2CF893B3001C8DB4 /* Converter.m */,
-				C5958DB32CF893B3001C8DB4 /* main.py */,
-				C5958DB92CF89B05001C8DB4 /* library.txt */,
-				C5958DA92CF89399001C8DB4 /* main.m */,
-			);
-			path = "language-objetive-c";
-			sourceTree = "<group>";
-		};
-		C59630982CE4DC2700D8D6EA = {
-			isa = PBXGroup;
-			children = (
-				C5958DA82CF89399001C8DB4 /* language-objetive-c */,
-				C59630A22CE4DC2700D8D6EA /* Products */,
+				C58A06212CFA0A4A00E5B04C /* language-objetive-c */,
+				C58A06202CFA0A4A00E5B04C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C59630A22CE4DC2700D8D6EA /* Products */ = {
+		C58A06202CFA0A4A00E5B04C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C5958DA72CF89399001C8DB4 /* language-objetive-c */,
+				C58A061F2CFA0A4A00E5B04C /* language-objetive-c */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C58A06212CFA0A4A00E5B04C /* language-objetive-c */ = {
+			isa = PBXGroup;
+			children = (
+				C58A06222CFA0A4A00E5B04C /* main.m */,
+				C58A062D2CFA0ABF00E5B04C /* Converter.h */,
+				C58A062E2CFA0ABF00E5B04C /* Converter.m */,
+				C58A06292CFA0ABF00E5B04C /* library.txt */,
+				C58A062B2CFA0ABF00E5B04C /* main.py */,
+			);
+			path = "language-objetive-c";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C5958DA62CF89399001C8DB4 /* language-objetive-c */ = {
+		C58A061E2CFA0A4A00E5B04C /* language-objetive-c */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5958DAB2CF8939A001C8DB4 /* Build configuration list for PBXNativeTarget "language-objetive-c" */;
+			buildConfigurationList = C58A06262CFA0A4A00E5B04C /* Build configuration list for PBXNativeTarget "language-objetive-c" */;
 			buildPhases = (
-				C5958DA32CF89399001C8DB4 /* Sources */,
-				C5958DA42CF89399001C8DB4 /* Frameworks */,
-				C5958DA52CF89399001C8DB4 /* CopyFiles */,
+				C58A061B2CFA0A4A00E5B04C /* Sources */,
+				C58A061C2CFA0A4A00E5B04C /* Frameworks */,
+				C58A061D2CFA0A4A00E5B04C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -88,24 +88,24 @@
 			);
 			name = "language-objetive-c";
 			productName = "language-objetive-c";
-			productReference = C5958DA72CF89399001C8DB4 /* language-objetive-c */;
+			productReference = C58A061F2CFA0A4A00E5B04C /* language-objetive-c */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C59630992CE4DC2700D8D6EA /* Project object */ = {
+		C58A06172CFA0A4A00E5B04C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					C5958DA62CF89399001C8DB4 = {
+					C58A061E2CFA0A4A00E5B04C = {
 						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
-			buildConfigurationList = C596309C2CE4DC2700D8D6EA /* Build configuration list for PBXProject "language-objetive-c" */;
+			buildConfigurationList = C58A061A2CFA0A4A00E5B04C /* Build configuration list for PBXProject "language-objetive-c" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,52 +113,30 @@
 				en,
 				Base,
 			);
-			mainGroup = C59630982CE4DC2700D8D6EA;
-			productRefGroup = C59630A22CE4DC2700D8D6EA /* Products */;
+			mainGroup = C58A06162CFA0A4A00E5B04C;
+			productRefGroup = C58A06202CFA0A4A00E5B04C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C5958DA62CF89399001C8DB4 /* language-objetive-c */,
+				C58A061E2CFA0A4A00E5B04C /* language-objetive-c */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C5958DA32CF89399001C8DB4 /* Sources */ = {
+		C58A061B2CFA0A4A00E5B04C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5958DB42CF893B3001C8DB4 /* Converter.m in Sources */,
-				C5958DAA2CF8939A001C8DB4 /* main.m in Sources */,
+				C58A06302CFA0ABF00E5B04C /* Converter.m in Sources */,
+				C58A06232CFA0A4A00E5B04C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C5958DAC2CF8939A001C8DB4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7SZ2D7F8WB;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C5958DAD2CF8939A001C8DB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7SZ2D7F8WB;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		C59630A62CE4DC2700D8D6EA /* Debug */ = {
+		C58A06242CFA0A4A00E5B04C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -216,7 +194,7 @@
 			};
 			name = Debug;
 		};
-		C59630A72CE4DC2700D8D6EA /* Release */ = {
+		C58A06252CFA0A4A00E5B04C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -267,28 +245,48 @@
 			};
 			name = Release;
 		};
+		C58A06272CFA0A4A00E5B04C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7SZ2D7F8WB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C58A06282CFA0A4A00E5B04C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7SZ2D7F8WB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C5958DAB2CF8939A001C8DB4 /* Build configuration list for PBXNativeTarget "language-objetive-c" */ = {
+		C58A061A2CFA0A4A00E5B04C /* Build configuration list for PBXProject "language-objetive-c" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5958DAC2CF8939A001C8DB4 /* Debug */,
-				C5958DAD2CF8939A001C8DB4 /* Release */,
+				C58A06242CFA0A4A00E5B04C /* Debug */,
+				C58A06252CFA0A4A00E5B04C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C596309C2CE4DC2700D8D6EA /* Build configuration list for PBXProject "language-objetive-c" */ = {
+		C58A06262CFA0A4A00E5B04C /* Build configuration list for PBXNativeTarget "language-objetive-c" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C59630A62CE4DC2700D8D6EA /* Debug */,
-				C59630A72CE4DC2700D8D6EA /* Release */,
+				C58A06272CFA0A4A00E5B04C /* Debug */,
+				C58A06282CFA0A4A00E5B04C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C59630992CE4DC2700D8D6EA /* Project object */;
+	rootObject = C58A06172CFA0A4A00E5B04C /* Project object */;
 }

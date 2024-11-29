@@ -1,3 +1,9 @@
+//
+//  main.m
+//  language-objetive-c
+//
+//  Created by Bobby on 2024/11/29.
+//
 #import <Foundation/Foundation.h>
 #import "Converter.h"
 
@@ -5,6 +11,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSError *error = nil;
 
+        // Đọc file main.py
         NSString *mainFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/main.py";
         NSString *mainCode = [NSString stringWithContentsOfFile:mainFilePath encoding:NSUTF8StringEncoding error:&error];
         
@@ -13,9 +20,11 @@ int main(int argc, const char * argv[]) {
             return 1;
         }
         
+        // Chuyển đổi mã Python sang Objective-C
         Converter *converter = [[Converter alloc] init];
         NSString *objcCode = [converter convertPythonToObjC:mainCode];
         
+        // Lưu mã Objective-C vào ConvertedApp.m
         NSString *convertedFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp.m";
         BOOL success = [objcCode writeToFile:convertedFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
         
@@ -24,6 +33,7 @@ int main(int argc, const char * argv[]) {
             return 1;
         }
         
+        // Đọc danh sách framework từ library.txt
         NSString *libraryFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/library.txt";
         NSString *libraryContent = [NSString stringWithContentsOfFile:libraryFilePath encoding:NSUTF8StringEncoding error:&error];
         
@@ -33,23 +43,27 @@ int main(int argc, const char * argv[]) {
         }
         
         NSArray *libraries = [libraryContent componentsSeparatedByString:@"\n"];
-        NSMutableString *clangCommand = [NSMutableString string];
-        
+        NSMutableArray *arguments = [NSMutableArray array];
+
+        // Thêm framework vào arguments
         for (NSString *library in libraries) {
             if (library.length > 0) {
-                [clangCommand appendFormat:@"-framework %@ ", library];
+                [arguments addObject:@"-framework"];
+                [arguments addObject:library];
             }
         }
-        
-        [clangCommand appendFormat:@"-o /Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp /Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp.m"];
-        
-        // Use NSTask to run the clang command
+
+        // Thêm tệp nguồn và tệp đích
+        [arguments addObject:@"-o"];
+        [arguments addObject:@"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp"];
+        [arguments addObject:@"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp.m"];
+
+        // Cấu hình NSTask để gọi clang qua /usr/bin/env
         NSTask *task = [[NSTask alloc] init];
         [task setLaunchPath:@"/usr/bin/env"];
-        [task setArguments:@[@"clang"]]; // Add clang arguments here
-        [task setEnvironment:@{@"PATH": @"/usr/bin:/bin:/usr/sbin:/sbin"}];
-        
-        // Handle error properly
+        [task setArguments:[@[@"clang"] arrayByAddingObjectsFromArray:arguments]];
+
+        // Chạy lệnh và chờ hoàn thành
         [task launch];
         [task waitUntilExit];
         
