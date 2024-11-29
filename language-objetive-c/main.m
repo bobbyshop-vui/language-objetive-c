@@ -61,7 +61,7 @@ int main(int argc, const char * argv[]) {
         // Cấu hình NSTask để gọi clang qua /usr/bin/env
         NSTask *task = [[NSTask alloc] init];
         [task setLaunchPath:@"/usr/bin/env"];
-        [task setArguments:[@[@"clang"] arrayByAddingObjectsFromArray:arguments]];
+        [task setArguments:[@[@"gcc"] arrayByAddingObjectsFromArray:arguments]];
 
         // Chạy lệnh và chờ hoàn thành
         [task launch];
