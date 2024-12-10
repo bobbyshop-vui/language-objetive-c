@@ -1,9 +1,3 @@
-//
-//  main.m
-//  language-objetive-c
-//
-//  Created by Bobby on 2024/11/29.
-//
 #import <Foundation/Foundation.h>
 #import "Converter.h"
 
@@ -12,7 +6,7 @@ int main(int argc, const char * argv[]) {
         NSError *error = nil;
 
         // Đọc file main.py
-        NSString *mainFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/main.py";
+        NSString *mainFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/App/main.loc.txt";
         NSString *mainCode = [NSString stringWithContentsOfFile:mainFilePath encoding:NSUTF8StringEncoding error:&error];
         
         if (error) {
@@ -25,7 +19,7 @@ int main(int argc, const char * argv[]) {
         NSString *objcCode = [converter convertPythonToObjC:mainCode];
         
         // Lưu mã Objective-C vào ConvertedApp.m
-        NSString *convertedFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp.m";
+        NSString *convertedFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/App/ConvertedApp.m";
         BOOL success = [objcCode writeToFile:convertedFilePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
         
         if (!success) {
@@ -53,12 +47,43 @@ int main(int argc, const char * argv[]) {
             }
         }
 
-        // Thêm tệp nguồn và tệp đích
+        // Đọc tệp add-h.txt để lấy danh sách file .h
+        NSString *addHFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/add-h.txt";
+        NSString *addHContent = [NSString stringWithContentsOfFile:addHFilePath encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            NSLog(@"Error reading add-h file: %@", error.localizedDescription);
+            return 1;
+        }
+
+        NSArray *headerFiles = [addHContent componentsSeparatedByString:@"\n"];
+        for (NSString *header in headerFiles) {
+            if (header.length > 0) {
+                [arguments addObject:@"-I"];
+                [arguments addObject:header];
+            }
+        }
+
+        // Đọc tệp add-m.txt để lấy danh sách file .m
+        NSString *addMFilePath = @"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/add-m.txt";
+        NSString *addMContent = [NSString stringWithContentsOfFile:addMFilePath encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            NSLog(@"Error reading add-m file: %@", error.localizedDescription);
+            return 1;
+        }
+
+        NSArray *sourceFiles = [addMContent componentsSeparatedByString:@"\n"];
+        for (NSString *source in sourceFiles) {
+            if (source.length > 0) {
+                [arguments addObject:source];
+            }
+        }
+
+        // Thêm tệp nguồn chính và tệp đích
+        [arguments addObject:@"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/App/ConvertedApp.m"];
         [arguments addObject:@"-o"];
         [arguments addObject:@"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp"];
-        [arguments addObject:@"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp.m"];
 
-        // Cấu hình NSTask để gọi clang qua /usr/bin/env
+        // Cấu hình NSTask để gọi Apple clang
         NSTask *task = [[NSTask alloc] init];
         [task setLaunchPath:@"/usr/bin/env"];
         [task setArguments:[@[@"gcc"] arrayByAddingObjectsFromArray:arguments]];
@@ -71,7 +96,10 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Clang command failed with exit code %d", [task terminationStatus]);
             return 1;
         }
-        
+        NSTask *runTask = [[NSTask alloc] init];
+        [runTask setLaunchPath:@"/Volumes/Data/Laptrinh/App/language-objetive-c/language-objetive-c/ConvertedApp"];
+        [runTask launch];
+        [runTask waitUntilExit];
         return 0;
     }
 }

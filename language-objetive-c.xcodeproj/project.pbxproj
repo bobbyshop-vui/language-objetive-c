@@ -24,12 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C58A061F2CFA0A4A00E5B04C /* language-objetive-c */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "language-objetive-c"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58A06222CFA0A4A00E5B04C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C58A06292CFA0ABF00E5B04C /* library.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = library.txt; sourceTree = "<group>"; };
-		C58A062B2CFA0ABF00E5B04C /* main.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 		C58A062D2CFA0ABF00E5B04C /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		C58A062E2CFA0ABF00E5B04C /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
+		C597717F2D07339700980F26 /* App */ = {isa = PBXFileReference; lastKnownFileType = folder; path = App; sourceTree = "<group>"; };
+		C59771802D085DA800980F26 /* add-h.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "add-h.txt"; sourceTree = "<group>"; };
+		C59771812D085DC200980F26 /* add-m.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "add-m.txt"; sourceTree = "<group>"; };
+		C5F90DAA2D05DAB7006A4888 /* language-objetive-c */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "language-objetive-c"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,26 +49,20 @@
 			isa = PBXGroup;
 			children = (
 				C58A06212CFA0A4A00E5B04C /* language-objetive-c */,
-				C58A06202CFA0A4A00E5B04C /* Products */,
+				C5F90DAA2D05DAB7006A4888 /* language-objetive-c */,
 			);
-			sourceTree = "<group>";
-		};
-		C58A06202CFA0A4A00E5B04C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C58A061F2CFA0A4A00E5B04C /* language-objetive-c */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C58A06212CFA0A4A00E5B04C /* language-objetive-c */ = {
 			isa = PBXGroup;
 			children = (
+				C597717F2D07339700980F26 /* App */,
 				C58A06222CFA0A4A00E5B04C /* main.m */,
 				C58A062D2CFA0ABF00E5B04C /* Converter.h */,
 				C58A062E2CFA0ABF00E5B04C /* Converter.m */,
 				C58A06292CFA0ABF00E5B04C /* library.txt */,
-				C58A062B2CFA0ABF00E5B04C /* main.py */,
+				C59771802D085DA800980F26 /* add-h.txt */,
+				C59771812D085DC200980F26 /* add-m.txt */,
 			);
 			path = "language-objetive-c";
 			sourceTree = "<group>";
@@ -88,7 +84,7 @@
 			);
 			name = "language-objetive-c";
 			productName = "language-objetive-c";
-			productReference = C58A061F2CFA0A4A00E5B04C /* language-objetive-c */;
+			productReference = C5F90DAA2D05DAB7006A4888 /* language-objetive-c */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +110,7 @@
 				Base,
 			);
 			mainGroup = C58A06162CFA0A4A00E5B04C;
-			productRefGroup = C58A06202CFA0A4A00E5B04C /* Products */;
+			productRefGroup = C58A06162CFA0A4A00E5B04C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -251,6 +247,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7SZ2D7F8WB;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/Volumes/Data/Xcode-beta.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -261,6 +258,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7SZ2D7F8WB;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/Volumes/Data/Xcode-beta.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

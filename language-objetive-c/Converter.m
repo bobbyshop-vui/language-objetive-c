@@ -23,9 +23,6 @@
             NSString *newLine = [NSString stringWithFormat:@"NSLog(@\%@\);", message];
             [objCCode appendFormat:@"%@\n", newLine];
         }
-        else if ([line containsString:@"#"]) {
-            [objCCode appendFormat:@"//%@\n", [line substringFromIndex:1]];
-        }
         else if ([line containsString:@"("] && [line containsString:@")"] && ![line containsString:@"void "]) {
             [objCCode appendFormat:@"%@\n", line];
         }
